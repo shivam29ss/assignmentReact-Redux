@@ -1,22 +1,26 @@
-// import C from "../data/constants";
+import C from "../data/constants";
 
-// export function addComment(postId, author, comment) {
-//   return {
-//     type: C.ADD_COMMENT,
-//     payload: {
-//       postId,
-//       author,
-//       comment
-//     }
-//   };
-// }
-
-// export function removeComment(postId, index) {
-//   return {
-//     type: C.REMOVE_COMMENT,
-//     payload: {
-//       index,
-//       postId
-//     }
-//   };
-// }
+export function sortList(order, status) {
+    switch (order) {
+        case C.NEWEST_ISSUES:
+            return {
+                type: C.NEWEST_ISSUES,
+                payload: status,
+            }
+        case C.OLDEST_ISSUES:
+            return {
+                type: C.OLDEST_ISSUES,
+                payload: status,
+            }
+        case C.MOST_COMMENTED:
+            return {
+                type: C.MOST_COMMENTED,
+                payload: status,
+            }
+        case C.LEAST_COMMENTED:
+            return {
+                type: C.LEAST_COMMENTED,
+                payload: status,
+            }
+    }
+}

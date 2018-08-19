@@ -16,10 +16,9 @@ class pagination extends React.Component {
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleStatus = this.handleStatus.bind(this);
+
     }
-
     handleClick(event) {
-
         this.setState({
             currentPage: Number(event.target.id)
         });
@@ -36,9 +35,7 @@ class pagination extends React.Component {
             status,
         })
     }
-
     render() {
-
         const { todosOpen, todosClosed, currentPage, todosPerPage, status } = this.state;
         var todos = todosOpen;
         if (status != "open") {
@@ -60,13 +57,11 @@ class pagination extends React.Component {
                 </li>
             </Link>;
         });
-
         // Logic for displaying page numbers
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i++) {
             pageNumbers.push(i);
         }
-
         const renderPageNumbers = pageNumbers.map(number => {
             return (
                 <span className="page-number"
@@ -78,7 +73,6 @@ class pagination extends React.Component {
                 </span>
             );
         });
-
         return (
             <div>
                 <ul className="issue-status">
@@ -89,10 +83,10 @@ class pagination extends React.Component {
                         <div className="dropdown">
                             <button className="dropbtn">sort</button>
                             <div className="dropdown-content">
-                                <a href="#" > Newest</a>
-                                <a href="#">Oldest</a>
-                                <a href="#">Most commented</a>
-                                <a href="#">Least commented</a>
+                                <span onClick={() => this.props.sortList(C.NEWEST_ISSUES, this.state.status)}> Newest</span>
+                                <span onClick={() => this.props.sortList(C.OLDEST_ISSUES, this.state.status)}>Oldest</span>
+                                <span onClick={() => this.props.sortList(C.MOST_COMMENTED, this.state.status)}>Most commented</span>
+                                <span onClick={() => this.props.sortList(C.LEAST_COMMENTED, this.state.status)}>Least commented</span>
                             </div>
                         </div>
                     </li>
@@ -107,6 +101,4 @@ class pagination extends React.Component {
         );
     }
 }
-
-
 export default pagination;
