@@ -32,6 +32,7 @@
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^5.0.1",
     "express": "^4.13.4",
+    "node-sass": "^4.9.3",
     "raven-js": "^2.3.0",
     "react": "^15.0.2",
     "react-addons-css-transition-group": "^15.0.2",
@@ -44,10 +45,11 @@
     "redbox-react": "^1.2.3",
     "redux": "^3.5.2",
     "rimraf": "^2.5.2",
+    "sass-loader": "^7.1.0",
+    "scss-loader": "0.0.1",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.0.0",
-    "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   },
@@ -55,6 +57,7 @@
     "expect": "^1.18.0",
     "expect-jsx": "^2.5.1",
     "mocha": "^2.4.5",
-    "react-addons-test-utils": "^15.0.2"
+    "react-addons-test-utils": "^15.0.2",
+    "webpack": "^1.15.0"
   }
 }

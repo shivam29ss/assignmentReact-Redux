@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './client/reduxstagram'
+    './client/github'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,6 +29,11 @@ module.exports = {
       test: /\.styl$/, 
       include: path.join(__dirname, 'client'),
       loader: 'style-loader!css-loader!stylus-loader'
+    },
+    {
+      test: /\.scss$/,
+      include: path.join(__dirname, 'client'),
+      loader: 'sass-loader'
     }
     ]
   }

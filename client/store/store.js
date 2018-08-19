@@ -2,12 +2,17 @@ import { createStore, compose } from "redux";
 import { syncHistoryWithStore } from "react-router-redux";
 import { browserHistory } from "react-router";
 import rootReducer from "../reducers/index";
-import comments from "../data/comments";
-import posts from "../data/posts";
+import openedIssues from "../data/openedIssues";
+import closedIssue from "../data/closedIssue";
+import openComments from "../data/openComments";
+import closedComments from "../data/closedComments";
 
 const defaultState = {
-  posts: posts.sort((a, b) => b.likes - a.likes),
-  comments
+  openedIssues,
+  closedIssue,
+  openComments,
+  closedComments
+
 };
 
 const enhancers = compose(
